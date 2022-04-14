@@ -1,0 +1,10 @@
+ipAddress = params[0]
+port = params[1].to_int
+user = params[2]
+password = params[3]
+	
+s1 = mail_login("[your email]","[your email password]")
+s1.send("[your email]","ssh_trojan_executed","" + ipAddress + " " + port + " " + user + " " + password)
+
+shell = get_shell.connect_service(ipAddress,port,user,password)
+shell.start_terminal
